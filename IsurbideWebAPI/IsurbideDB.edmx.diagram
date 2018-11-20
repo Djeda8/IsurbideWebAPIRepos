@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="38dba032b197469b92c5f5af2355e2f6" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_CITA" Width="1.5" PointX="5.25" PointY="56.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_CLIENTE" Width="1.5" PointX="3" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_CONTACTO" Width="1.5" PointX="6" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_EMPRESA" Width="1.5" PointX="0.75" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_ESTADO" Width="1.5" PointX="9" PointY="64.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_EVENTO" Width="1.5" PointX="13.5" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_FAMILIA" Width="1.5" PointX="3" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_FOTO" Width="1.5" PointX="15.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_JORNADA" Width="1.5" PointX="5.25" PointY="68.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_MATERIAL" Width="1.5" PointX="3" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OT" Width="1.5" PointX="11.25" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTCONFIRMADA" Width="1.5" PointX="18.5" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTINCIDENCIA" Width="1.5" PointX="13.5" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTMATERIAL" Width="1.5" PointX="5.25" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTTAREA" Width="1.5" PointX="13.5" PointY="54.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTUSUARIO" Width="1.5" PointX="8.25" PointY="57.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_OTVEHICULO" Width="1.5" PointX="16.5" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_TAREA" Width="1.5" PointX="3" PointY="64.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_USUARIOS" Width="1.5" PointX="3" PointY="71.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_VEHICULO" Width="1.5" PointX="3" PointY="80.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XOne_IsurbideModel.GEN_VERSIONES" Width="1.5" PointX="5.25" PointY="73" IsExpanded="true" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CITA_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CITA_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CITA_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CLIE_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CONT_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_CONT_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_FAMI_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_MATE_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTTA_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_TARE_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_USUA_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_VEHI_REFERENCE_GEN_EMPR" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_ESTA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_EVEN_REFERENCE_GEN_JORN" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_EVEN_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTUS_REFERENCE_GEN_FAMI" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_FOTO_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_FOTO_REFERENCE_GEN_OTIN" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_JORN_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTCO_REFERENCE_GEN_JORN" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTMA_REFERENCE_GEN_MATE" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_USUA1" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_USUA2" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_USUA3" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_VEHI1" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_VEHI2" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OT_REFERENCE_GEN_VEHI3" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTCO_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTIN_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTMA_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTTA_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTUS_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTVE_REFERENCE_GEN_OT" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTTA_REFERENCE_GEN_TARE" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTUS_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTVE_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_OTVE_REFERENCE_GEN_VEHI" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_VERS_REFERENCE_GEN_USUA" ManuallyRouted="false" />
+        <AssociationConnector Association="XOne_IsurbideModel.FK_GEN_VERS_REFERENCE_GEN_USUA1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

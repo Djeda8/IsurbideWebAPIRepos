@@ -1,0 +1,2778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="XOne_IsurbideModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GEN_CITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="USUARIOID" Type="int" Nullable="false" />
+          <Property Name="OTID" Type="int" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="36" />
+          <Property Name="FECHAHORAINICIO" Type="datetime" Nullable="false" />
+          <Property Name="FECHAHORAFIN" Type="datetime" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+          <Property Name="CODIGOTIPO" Type="nvarchar" MaxLength="3" />
+          <Property Name="EJERCICIO" Type="int" />
+          <Property Name="SERIE" Type="nvarchar" MaxLength="10" />
+          <Property Name="NUMERO" Type="int" />
+          <Property Name="CODIGOTIPOFASE" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="GEN_CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="CODIGOCLIENTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="NOMBRECLIENTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="TELEFONOCLIENTE" Type="nvarchar" MaxLength="15" />
+          <Property Name="CARGOCLIENTE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIRECCIONCLIENTE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_CONTACTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="36" />
+          <Property Name="CODIGOCLIENTE" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CITANOMBRE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CITATELEFONO" Type="nvarchar" MaxLength="15" />
+          <Property Name="CITACARGO" Type="nvarchar" MaxLength="50" />
+          <Property Name="CITACONFIRMADO" Type="int" />
+          <Property Name="CITAOBSERVACIONES" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_EMPRESA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="CODIGO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="nvarchar" MaxLength="45" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_ESTADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGOESTADO" Type="int" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="40" />
+          <Property Name="ESTADO" Type="nvarchar" MaxLength="40" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_EVENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" />
+          <Property Name="JORNADAID" Type="int" Nullable="false" />
+          <Property Name="TIPOEVENTO" Type="int" Nullable="false" />
+          <Property Name="FECHAEVENTO" Type="datetime" Nullable="false" />
+          <Property Name="LATITUD" Type="float" />
+          <Property Name="LONGITUD" Type="float" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_FAMILIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="int" />
+          <Property Name="TIPOPARTE" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="CODIGOFAMILIA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODIGOSUBFAMILIA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODIGOARTICULO" Type="nvarchar" MaxLength="20" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_FOTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDINCIDENCIA" Type="int" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="FOTO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="FOTOMANT" Type="int" />
+          <Property Name="FOTOREP" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_JORNADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USUARIOID" Type="int" Nullable="false" />
+          <Property Name="INICIO" Type="datetime" Nullable="false" />
+          <Property Name="FIN" Type="datetime" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_MATERIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="25" />
+          <Property Name="CODIGO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="50" />
+          <Property Name="CODIGOFAMILIA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODIGOSUBFAMILIA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_OT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ESTADOID" Type="int" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="CODIGOPARTEID" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="CODIGOTIPO" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="TIPOPARTE" Type="nvarchar" MaxLength="25" />
+          <Property Name="EJERCICIO" Type="int" Nullable="false" />
+          <Property Name="SERIE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NUMERO" Type="int" Nullable="false" />
+          <Property Name="FECHAALTA" Type="datetime" Nullable="false" />
+          <Property Name="FECHAINTEGRACIONMOVILIDAD" Type="datetime" />
+          <Property Name="FECHAINTEGRACIONORIGEN" Type="datetime" />
+          <Property Name="FORZARINTEGRACIONORIGEN" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="CLIENTECODIGO" Type="nvarchar" MaxLength="15" />
+          <Property Name="CLIENTENOMBRE" Type="nvarchar" MaxLength="150" />
+          <Property Name="CLIENTEDIRECCION" Type="nvarchar" MaxLength="40" />
+          <Property Name="CLIENTEPOBLACION" Type="nvarchar" MaxLength="25" />
+          <Property Name="IDRESPONSABLE" Type="int" />
+          <Property Name="FECHAINTERVENCION" Type="datetime" Nullable="false" />
+          <Property Name="TIEMPO" Type="nvarchar" MaxLength="80" />
+          <Property Name="DESC_MANT" Type="nvarchar" MaxLength="4000" />
+          <Property Name="DESC_SERV" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ADMINISTRADORCODIGO" Type="int" />
+          <Property Name="ADMINISTRADORNOMBRE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADMINISTRADORTELEFONO" Type="nvarchar" MaxLength="15" />
+          <Property Name="ADMINISTRADOREMAIL" Type="nvarchar" MaxLength="250" />
+          <Property Name="AFECTADONOMBRE" Type="varchar" MaxLength="50" />
+          <Property Name="AFECTADOTELEFONO" Type="varchar" MaxLength="25" />
+          <Property Name="PERSONANOMBRE" Type="varchar" MaxLength="50" />
+          <Property Name="PERSONATELEFONO" Type="varchar" MaxLength="15" />
+          <Property Name="IDTECNICO1" Type="int" Nullable="false" />
+          <Property Name="IDTECNICO2" Type="int" />
+          <Property Name="IDTECNICO3" Type="int" />
+          <Property Name="IDVEHICULO1" Type="int" />
+          <Property Name="IDVEHICULO2" Type="int" />
+          <Property Name="IDVEHICULO3" Type="int" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+          <Property Name="CODIGOTIPOFASE" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="GEN_OTCONFIRMADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="JORNADAID" Type="int" Nullable="false" />
+          <Property Name="TSGARANTIA" Type="int" />
+          <Property Name="TSGARANTIAOBSERV" Type="nvarchar" MaxLength="100" />
+          <Property Name="TRABAJOSREA" Type="nvarchar" MaxLength="1200" />
+          <Property Name="NOMBREFIRMA" Type="nvarchar" MaxLength="100" />
+          <Property Name="DNIFIRMA" Type="nvarchar" MaxLength="100" />
+          <Property Name="FIRMACLIENTE" Type="nvarchar" MaxLength="100" />
+          <Property Name="FIRMATECNICO" Type="nvarchar" MaxLength="100" />
+          <Property Name="M_PRE_PERIODO" Type="nvarchar" MaxLength="100" />
+          <Property Name="M_PRE_OBSERVACIONES" Type="nvarchar" MaxLength="1200" />
+          <Property Name="M_PRE_CONGARANTIA" Type="int" />
+          <Property Name="M_PRE_SINGARANTIA" Type="int" />
+          <Property Name="M_PRE_CONGARANTIA24" Type="int" />
+          <Property Name="M_PRE_PRECIO" Type="float" />
+          <Property Name="M_PRE_TIEMPO" Type="float" />
+          <Property Name="M_PRE_OPERARIOS" Type="int" />
+          <Property Name="M_PRE_OBSERVACCESOS" Type="nvarchar" MaxLength="100" />
+          <Property Name="R_PRE_OBSERVACIONES" Type="nvarchar" MaxLength="1200" />
+          <Property Name="R_PRE_OBSERVACCESOS" Type="nvarchar" MaxLength="100" />
+          <Property Name="R_PRE_PRECIO" Type="float" />
+          <Property Name="R_PRE_TIEMPO" Type="float" />
+          <Property Name="R_PRE_OPERARIOS" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="PDF_GENERADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="PDF_MANT" Type="int" />
+          <Property Name="PDF_REP" Type="int" />
+          <Property Name="PDF_INCIDENCIA" Type="int" />
+          <Property Name="PAGADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_OTINCIDENCIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="INC_INTERNA" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_OTMATERIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="MATERIALID" Type="int" Nullable="false" />
+          <Property Name="CANTIDAD" Type="float" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_OTTAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="TAREAID" Type="int" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="25" />
+          <Property Name="CONFIRMADA" Type="int" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_OTUSUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="USUARIOID" Type="int" Nullable="false" />
+          <Property Name="IDOTFAMILIA" Type="int" Nullable="false" />
+          <Property Name="TIEMPOINI" Type="nvarchar" MaxLength="5" />
+          <Property Name="TIEMPOFIN" Type="nvarchar" MaxLength="5" />
+          <Property Name="TIEMPO" Type="nvarchar" MaxLength="5" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="TIEMPOTXT" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="GEN_OTVEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OTID" Type="int" Nullable="false" />
+          <Property Name="VEHICULOID" Type="int" Nullable="false" />
+          <Property Name="IDOTFAMILIA" Type="int" Nullable="false" />
+          <Property Name="TIEMPO" Type="nvarchar" MaxLength="5" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="USUARIOID" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_TAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="25" />
+          <Property Name="CODIGO" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="25" />
+          <Property Name="CODIGO" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="LOGIN" Type="nvarchar" MaxLength="15" />
+          <Property Name="PWD" Type="nvarchar" MaxLength="15" />
+          <Property Name="NOMBRE" Type="nvarchar" MaxLength="150" />
+          <Property Name="USERTYPE" Type="nvarchar" MaxLength="10" />
+          <Property Name="AUTO" Type="int" />
+          <Property Name="ACTIVO_SON" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="APELLIDOS" Type="nvarchar" MaxLength="100" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_VEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_INT" Type="nvarchar" MaxLength="25" />
+          <Property Name="CODIGO" Type="int" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="100" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="datetime" Nullable="false" />
+          <Property Name="FECHAACTUALIZACION" Type="datetime" />
+          <Property Name="BORRADO" Type="int" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+          <Property Name="MARCADO" Type="int" />
+        </EntityType>
+        <EntityType Name="GEN_VERSIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROWID" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="PRIMERUSUARIOID" Type="int" />
+          <Property Name="ULTIMOUSUARIOID" Type="int" />
+          <Property Name="MID" Type="int" />
+          <Property Name="VERSION_SW" Type="nvarchar" MaxLength="10" />
+          <Property Name="VERSION_BBDD" Type="nvarchar" MaxLength="10" />
+          <Property Name="FECHAPRIMERLOGIN" Type="datetime" />
+          <Property Name="FECHAULTIMOLOGIN" Type="datetime" />
+          <Property Name="LOGACTIVADO_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="LOGLEVEL" Type="nvarchar" MaxLength="1" />
+          <Property Name="MANTENIMIENTODB_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="DATABASENAME" Type="nvarchar" MaxLength="10" />
+          <Property Name="LICENSE" Type="nvarchar" MaxLength="30" />
+          <Property Name="CONNSTRING" Type="nvarchar" MaxLength="250" />
+          <Property Name="HOSTNAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="HOSTNAME2" Type="nvarchar" MaxLength="250" />
+          <Property Name="INTERVAL" Type="int" />
+          <Property Name="INTERVALTYPE" Type="int" />
+          <Property Name="TIMEOUT" Type="int" />
+          <Property Name="CONNECTIONMODE" Type="nvarchar" MaxLength="64" />
+          <Property Name="SERVERPORT" Type="int" />
+          <Property Name="FULLDUPLEX_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="SYNCHRONIZE_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="COMPRESSUP_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="COMPRESSDOWN_SON" Type="nvarchar" MaxLength="1" />
+          <Property Name="BATCHSIZEUP" Type="int" />
+          <Property Name="ITX_TERMINAL" Type="int" />
+        </EntityType>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="0..1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CLIE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CLIENTE" Type="Self.GEN_CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CLIENTE">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CONT_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CONTACTO" Type="Self.GEN_CONTACTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CONTACTO">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CONT_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_CONTACTO" Type="Self.GEN_CONTACTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CONTACTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_EVEN_REFERENCE_GEN_JORN">
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="1" />
+          <End Role="GEN_EVENTO" Type="Self.GEN_EVENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_JORNADA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_EVENTO">
+              <PropertyRef Name="JORNADAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_EVEN_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="0..1" />
+          <End Role="GEN_EVENTO" Type="Self.GEN_EVENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_EVENTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FAMI_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_FAMILIA" Type="Self.GEN_FAMILIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FAMILIA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FOTO_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_FOTO" Type="Self.GEN_FOTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FOTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FOTO_REFERENCE_GEN_OTIN">
+          <End Role="GEN_OTINCIDENCIA" Type="Self.GEN_OTINCIDENCIA" Multiplicity="1" />
+          <End Role="GEN_FOTO" Type="Self.GEN_FOTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OTINCIDENCIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FOTO">
+              <PropertyRef Name="IDINCIDENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_JORN_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_JORNADA">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_MATE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_MATERIAL" Type="Self.GEN_MATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_MATERIAL">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_ESTA">
+          <End Role="GEN_ESTADO" Type="Self.GEN_ESTADO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_ESTADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="ESTADOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDRESPONSABLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA1">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA2">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA3">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI1">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI2">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI3">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTCO_REFERENCE_GEN_JORN">
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="1" />
+          <End Role="GEN_OTCONFIRMADA" Type="Self.GEN_OTCONFIRMADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_JORNADA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTCONFIRMADA">
+              <PropertyRef Name="JORNADAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTCO_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTCONFIRMADA" Type="Self.GEN_OTCONFIRMADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTCONFIRMADA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTIN_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTINCIDENCIA" Type="Self.GEN_OTINCIDENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTINCIDENCIA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTMA_REFERENCE_GEN_MATE">
+          <End Role="GEN_MATERIAL" Type="Self.GEN_MATERIAL" Multiplicity="1" />
+          <End Role="GEN_OTMATERIAL" Type="Self.GEN_OTMATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_MATERIAL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTMATERIAL">
+              <PropertyRef Name="MATERIALID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTMA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTMATERIAL" Type="Self.GEN_OTMATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTMATERIAL">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_TARE">
+          <End Role="GEN_TAREA" Type="Self.GEN_TAREA" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_TAREA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="TAREAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_FAMI">
+          <End Role="GEN_FAMILIA" Type="Self.GEN_FAMILIA" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_FAMILIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="IDOTFAMILIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_VEHI">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="VEHICULOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_TARE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_TAREA" Type="Self.GEN_TAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_TAREA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_USUA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_USUARIOS">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VEHI_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VEHICULO">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VERS_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_VERSIONES" Type="Self.GEN_VERSIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VERSIONES">
+              <PropertyRef Name="PRIMERUSUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VERS_REFERENCE_GEN_USUA1">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_VERSIONES" Type="Self.GEN_VERSIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VERSIONES">
+              <PropertyRef Name="ULTIMOUSUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="XOne_IsurbideModelStoreContainer">
+          <EntitySet Name="GEN_CITA" EntityType="Self.GEN_CITA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_CLIENTE" EntityType="Self.GEN_CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_CONTACTO" EntityType="Self.GEN_CONTACTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_EMPRESA" EntityType="Self.GEN_EMPRESA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_ESTADO" EntityType="Self.GEN_ESTADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_EVENTO" EntityType="Self.GEN_EVENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_FAMILIA" EntityType="Self.GEN_FAMILIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_FOTO" EntityType="Self.GEN_FOTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_JORNADA" EntityType="Self.GEN_JORNADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_MATERIAL" EntityType="Self.GEN_MATERIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OT" EntityType="Self.GEN_OT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTCONFIRMADA" EntityType="Self.GEN_OTCONFIRMADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTINCIDENCIA" EntityType="Self.GEN_OTINCIDENCIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTMATERIAL" EntityType="Self.GEN_OTMATERIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTTAREA" EntityType="Self.GEN_OTTAREA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTUSUARIO" EntityType="Self.GEN_OTUSUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_OTVEHICULO" EntityType="Self.GEN_OTVEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_TAREA" EntityType="Self.GEN_TAREA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_USUARIOS" EntityType="Self.GEN_USUARIOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_VEHICULO" EntityType="Self.GEN_VEHICULO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GEN_VERSIONES" EntityType="Self.GEN_VERSIONES" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CITA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_OT" Association="Self.FK_GEN_CITA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_USUA" Association="Self.FK_GEN_CITA_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CLIE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CLIE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CLIENTE" EntitySet="GEN_CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CONT_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CONT_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CONTACTO" EntitySet="GEN_CONTACTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CONT_REFERENCE_GEN_OT" Association="Self.FK_GEN_CONT_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_CONTACTO" EntitySet="GEN_CONTACTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_EVEN_REFERENCE_GEN_JORN" Association="Self.FK_GEN_EVEN_REFERENCE_GEN_JORN">
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+            <End Role="GEN_EVENTO" EntitySet="GEN_EVENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_EVEN_REFERENCE_GEN_OT" Association="Self.FK_GEN_EVEN_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_EVENTO" EntitySet="GEN_EVENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FAMI_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_FAMI_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_FAMILIA" EntitySet="GEN_FAMILIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FOTO_REFERENCE_GEN_OT" Association="Self.FK_GEN_FOTO_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_FOTO" EntitySet="GEN_FOTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FOTO_REFERENCE_GEN_OTIN" Association="Self.FK_GEN_FOTO_REFERENCE_GEN_OTIN">
+            <End Role="GEN_OTINCIDENCIA" EntitySet="GEN_OTINCIDENCIA" />
+            <End Role="GEN_FOTO" EntitySet="GEN_FOTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_JORN_REFERENCE_GEN_USUA" Association="Self.FK_GEN_JORN_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_MATE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_MATE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_MATERIAL" EntitySet="GEN_MATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_OT_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_ESTA" Association="Self.FK_GEN_OT_REFERENCE_GEN_ESTA">
+            <End Role="GEN_ESTADO" EntitySet="GEN_ESTADO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA1" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA1">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA2" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA2">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA3" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA3">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI1" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI1">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI2" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI2">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI3" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI3">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTCO_REFERENCE_GEN_JORN" Association="Self.FK_GEN_OTCO_REFERENCE_GEN_JORN">
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+            <End Role="GEN_OTCONFIRMADA" EntitySet="GEN_OTCONFIRMADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTCO_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTCO_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTCONFIRMADA" EntitySet="GEN_OTCONFIRMADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTIN_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTIN_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTINCIDENCIA" EntitySet="GEN_OTINCIDENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTMA_REFERENCE_GEN_MATE" Association="Self.FK_GEN_OTMA_REFERENCE_GEN_MATE">
+            <End Role="GEN_MATERIAL" EntitySet="GEN_MATERIAL" />
+            <End Role="GEN_OTMATERIAL" EntitySet="GEN_OTMATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTMA_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTMA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTMATERIAL" EntitySet="GEN_OTMATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_TARE" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_TARE">
+            <End Role="GEN_TAREA" EntitySet="GEN_TAREA" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_FAMI" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_FAMI">
+            <End Role="GEN_FAMILIA" EntitySet="GEN_FAMILIA" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_VEHI" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_VEHI">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_TARE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_TARE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_TAREA" EntitySet="GEN_TAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_USUA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_USUA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VEHI_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_VEHI_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VERS_REFERENCE_GEN_USUA" Association="Self.FK_GEN_VERS_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_VERSIONES" EntitySet="GEN_VERSIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VERS_REFERENCE_GEN_USUA1" Association="Self.FK_GEN_VERS_REFERENCE_GEN_USUA1">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_VERSIONES" EntitySet="GEN_VERSIONES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XOne_IsurbideModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GEN_CITA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USUARIOID" Type="Int32" Nullable="false" />
+          <Property Name="OTID" Type="Int32" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAHORAINICIO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAHORAFIN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <Property Name="CODIGOTIPO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="EJERCICIO" Type="Int32" />
+          <Property Name="SERIE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NUMERO" Type="Int32" />
+          <Property Name="CODIGOTIPOFASE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_EMPR" FromRole="GEN_CITA" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_OT" FromRole="GEN_CITA" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_USUA" FromRole="GEN_CITA" ToRole="GEN_USUARIOS" />
+        </EntityType>
+        <EntityType Name="GEN_CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOCLIENTE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NOMBRECLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFONOCLIENTE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CARGOCLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECCIONCLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_CLIE_REFERENCE_GEN_EMPR" FromRole="GEN_CLIENTE" ToRole="GEN_EMPRESA" />
+        </EntityType>
+        <EntityType Name="GEN_CONTACTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGOCLIENTE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CITANOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CITATELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CITACARGO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CITACONFIRMADO" Type="Int32" />
+          <Property Name="CITAOBSERVACIONES" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_CONT_REFERENCE_GEN_EMPR" FromRole="GEN_CONTACTO" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_CONT_REFERENCE_GEN_OT" FromRole="GEN_CONTACTO" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_EMPRESA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_CITA" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_CITA" />
+          <NavigationProperty Name="GEN_CLIENTE" Relationship="Self.FK_GEN_CLIE_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_CLIENTE" />
+          <NavigationProperty Name="GEN_CONTACTO" Relationship="Self.FK_GEN_CONT_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_CONTACTO" />
+          <NavigationProperty Name="GEN_FAMILIA" Relationship="Self.FK_GEN_FAMI_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_FAMILIA" />
+          <NavigationProperty Name="GEN_MATERIAL" Relationship="Self.FK_GEN_MATE_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_MATERIAL" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OTTAREA" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_OTTAREA" />
+          <NavigationProperty Name="GEN_TAREA" Relationship="Self.FK_GEN_TARE_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_TAREA" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_USUA_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_VEHICULO" Relationship="Self.FK_GEN_VEHI_REFERENCE_GEN_EMPR" FromRole="GEN_EMPRESA" ToRole="GEN_VEHICULO" />
+        </EntityType>
+        <EntityType Name="GEN_ESTADO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGOESTADO" Type="Int32" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_ESTA" FromRole="GEN_ESTADO" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_EVENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" />
+          <Property Name="JORNADAID" Type="Int32" Nullable="false" />
+          <Property Name="TIPOEVENTO" Type="Int32" Nullable="false" />
+          <Property Name="FECHAEVENTO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LATITUD" Type="Double" />
+          <Property Name="LONGITUD" Type="Double" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_JORNADA" Relationship="Self.FK_GEN_EVEN_REFERENCE_GEN_JORN" FromRole="GEN_EVENTO" ToRole="GEN_JORNADA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_EVEN_REFERENCE_GEN_OT" FromRole="GEN_EVENTO" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_FAMILIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="Int32" />
+          <Property Name="TIPOPARTE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOFAMILIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOSUBFAMILIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOARTICULO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_FAMI_REFERENCE_GEN_EMPR" FromRole="GEN_FAMILIA" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OTUSUARIO" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_FAMI" FromRole="GEN_FAMILIA" ToRole="GEN_OTUSUARIO" />
+        </EntityType>
+        <EntityType Name="GEN_FOTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDINCIDENCIA" Type="Int32" Nullable="false" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="FOTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="FOTOMANT" Type="Int32" />
+          <Property Name="FOTOREP" Type="Int32" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_FOTO_REFERENCE_GEN_OT" FromRole="GEN_FOTO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OTINCIDENCIA" Relationship="Self.FK_GEN_FOTO_REFERENCE_GEN_OTIN" FromRole="GEN_FOTO" ToRole="GEN_OTINCIDENCIA" />
+        </EntityType>
+        <EntityType Name="GEN_JORNADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USUARIOID" Type="Int32" Nullable="false" />
+          <Property Name="INICIO" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FIN" Type="DateTime" Precision="3" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_EVENTO" Relationship="Self.FK_GEN_EVEN_REFERENCE_GEN_JORN" FromRole="GEN_JORNADA" ToRole="GEN_EVENTO" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_JORN_REFERENCE_GEN_USUA" FromRole="GEN_JORNADA" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_OTCONFIRMADA" Relationship="Self.FK_GEN_OTCO_REFERENCE_GEN_JORN" FromRole="GEN_JORNADA" ToRole="GEN_OTCONFIRMADA" />
+        </EntityType>
+        <EntityType Name="GEN_MATERIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGOFAMILIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOSUBFAMILIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_MATE_REFERENCE_GEN_EMPR" FromRole="GEN_MATERIAL" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OTMATERIAL" Relationship="Self.FK_GEN_OTMA_REFERENCE_GEN_MATE" FromRole="GEN_MATERIAL" ToRole="GEN_OTMATERIAL" />
+        </EntityType>
+        <EntityType Name="GEN_OT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ESTADOID" Type="Int32" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="CODIGOPARTEID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODIGOTIPO" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TIPOPARTE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EJERCICIO" Type="Int32" Nullable="false" />
+          <Property Name="SERIE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NUMERO" Type="Int32" Nullable="false" />
+          <Property Name="FECHAALTA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAINTEGRACIONMOVILIDAD" Type="DateTime" Precision="3" />
+          <Property Name="FECHAINTEGRACIONORIGEN" Type="DateTime" Precision="3" />
+          <Property Name="FORZARINTEGRACIONORIGEN" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="CLIENTECODIGO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENTENOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENTEDIRECCION" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENTEPOBLACION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IDRESPONSABLE" Type="Int32" />
+          <Property Name="FECHAINTERVENCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TIEMPO" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="DESC_MANT" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="DESC_SERV" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ADMINISTRADORCODIGO" Type="Int32" />
+          <Property Name="ADMINISTRADORNOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADMINISTRADORTELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ADMINISTRADOREMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AFECTADONOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AFECTADOTELEFONO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONANOMBRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONATELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IDTECNICO1" Type="Int32" Nullable="false" />
+          <Property Name="IDTECNICO2" Type="Int32" />
+          <Property Name="IDTECNICO3" Type="Int32" />
+          <Property Name="IDVEHICULO1" Type="Int32" />
+          <Property Name="IDVEHICULO2" Type="Int32" />
+          <Property Name="IDVEHICULO3" Type="Int32" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <Property Name="CODIGOTIPOFASE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GEN_CITA" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_CITA" />
+          <NavigationProperty Name="GEN_CONTACTO" Relationship="Self.FK_GEN_CONT_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_CONTACTO" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_EMPR" FromRole="GEN_OT" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_ESTADO" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_ESTA" FromRole="GEN_OT" ToRole="GEN_ESTADO" />
+          <NavigationProperty Name="GEN_EVENTO" Relationship="Self.FK_GEN_EVEN_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_EVENTO" />
+          <NavigationProperty Name="GEN_FOTO" Relationship="Self.FK_GEN_FOTO_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_FOTO" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA" FromRole="GEN_OT" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_USUARIOS1" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA1" FromRole="GEN_OT" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_USUARIOS2" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA2" FromRole="GEN_OT" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_USUARIOS3" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA3" FromRole="GEN_OT" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_VEHICULO" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI1" FromRole="GEN_OT" ToRole="GEN_VEHICULO" />
+          <NavigationProperty Name="GEN_VEHICULO1" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI2" FromRole="GEN_OT" ToRole="GEN_VEHICULO" />
+          <NavigationProperty Name="GEN_VEHICULO2" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI3" FromRole="GEN_OT" ToRole="GEN_VEHICULO" />
+          <NavigationProperty Name="GEN_OTCONFIRMADA" Relationship="Self.FK_GEN_OTCO_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTCONFIRMADA" />
+          <NavigationProperty Name="GEN_OTINCIDENCIA" Relationship="Self.FK_GEN_OTIN_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTINCIDENCIA" />
+          <NavigationProperty Name="GEN_OTMATERIAL" Relationship="Self.FK_GEN_OTMA_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTMATERIAL" />
+          <NavigationProperty Name="GEN_OTTAREA" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTTAREA" />
+          <NavigationProperty Name="GEN_OTUSUARIO" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTUSUARIO" />
+          <NavigationProperty Name="GEN_OTVEHICULO" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_OT" FromRole="GEN_OT" ToRole="GEN_OTVEHICULO" />
+        </EntityType>
+        <EntityType Name="GEN_OTCONFIRMADA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="JORNADAID" Type="Int32" Nullable="false" />
+          <Property Name="TSGARANTIA" Type="Int32" />
+          <Property Name="TSGARANTIAOBSERV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRABAJOSREA" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBREFIRMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DNIFIRMA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FIRMACLIENTE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FIRMATECNICO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="M_PRE_PERIODO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="M_PRE_OBSERVACIONES" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+          <Property Name="M_PRE_CONGARANTIA" Type="Int32" />
+          <Property Name="M_PRE_SINGARANTIA" Type="Int32" />
+          <Property Name="M_PRE_CONGARANTIA24" Type="Int32" />
+          <Property Name="M_PRE_PRECIO" Type="Double" />
+          <Property Name="M_PRE_TIEMPO" Type="Double" />
+          <Property Name="M_PRE_OPERARIOS" Type="Int32" />
+          <Property Name="M_PRE_OBSERVACCESOS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="R_PRE_OBSERVACIONES" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+          <Property Name="R_PRE_OBSERVACCESOS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="R_PRE_PRECIO" Type="Double" />
+          <Property Name="R_PRE_TIEMPO" Type="Double" />
+          <Property Name="R_PRE_OPERARIOS" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="PDF_GENERADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="PDF_MANT" Type="Int32" />
+          <Property Name="PDF_REP" Type="Int32" />
+          <Property Name="PDF_INCIDENCIA" Type="Int32" />
+          <Property Name="PAGADO" Type="Int32" />
+          <NavigationProperty Name="GEN_JORNADA" Relationship="Self.FK_GEN_OTCO_REFERENCE_GEN_JORN" FromRole="GEN_OTCONFIRMADA" ToRole="GEN_JORNADA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTCO_REFERENCE_GEN_OT" FromRole="GEN_OTCONFIRMADA" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_OTINCIDENCIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="INC_INTERNA" Type="Int32" />
+          <NavigationProperty Name="GEN_FOTO" Relationship="Self.FK_GEN_FOTO_REFERENCE_GEN_OTIN" FromRole="GEN_OTINCIDENCIA" ToRole="GEN_FOTO" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTIN_REFERENCE_GEN_OT" FromRole="GEN_OTINCIDENCIA" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_OTMATERIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="MATERIALID" Type="Int32" Nullable="false" />
+          <Property Name="CANTIDAD" Type="Double" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_MATERIAL" Relationship="Self.FK_GEN_OTMA_REFERENCE_GEN_MATE" FromRole="GEN_OTMATERIAL" ToRole="GEN_MATERIAL" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTMA_REFERENCE_GEN_OT" FromRole="GEN_OTMATERIAL" ToRole="GEN_OT" />
+        </EntityType>
+        <EntityType Name="GEN_OTTAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="TAREAID" Type="Int32" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CONFIRMADA" Type="Int32" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_EMPR" FromRole="GEN_OTTAREA" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_OT" FromRole="GEN_OTTAREA" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_TAREA" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_TARE" FromRole="GEN_OTTAREA" ToRole="GEN_TAREA" />
+        </EntityType>
+        <EntityType Name="GEN_OTUSUARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="USUARIOID" Type="Int32" Nullable="false" />
+          <Property Name="IDOTFAMILIA" Type="Int32" Nullable="false" />
+          <Property Name="TIEMPOINI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TIEMPOFIN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TIEMPO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="TIEMPOTXT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GEN_FAMILIA" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_FAMI" FromRole="GEN_OTUSUARIO" ToRole="GEN_FAMILIA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_OT" FromRole="GEN_OTUSUARIO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_USUA" FromRole="GEN_OTUSUARIO" ToRole="GEN_USUARIOS" />
+        </EntityType>
+        <EntityType Name="GEN_OTVEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OTID" Type="Int32" Nullable="false" />
+          <Property Name="VEHICULOID" Type="Int32" Nullable="false" />
+          <Property Name="IDOTFAMILIA" Type="Int32" Nullable="false" />
+          <Property Name="TIEMPO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="USUARIOID" Type="Int32" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_OT" FromRole="GEN_OTVEHICULO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_USUA" FromRole="GEN_OTVEHICULO" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_VEHICULO" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_VEHI" FromRole="GEN_OTVEHICULO" ToRole="GEN_VEHICULO" />
+        </EntityType>
+        <EntityType Name="GEN_TAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_TARE_REFERENCE_GEN_EMPR" FromRole="GEN_TAREA" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OTTAREA" Relationship="Self.FK_GEN_OTTA_REFERENCE_GEN_TARE" FromRole="GEN_TAREA" ToRole="GEN_OTTAREA" />
+        </EntityType>
+        <EntityType Name="GEN_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOGIN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PWD" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="USERTYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AUTO" Type="Int32" />
+          <Property Name="ACTIVO_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="APELLIDOS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_CITA" Relationship="Self.FK_GEN_CITA_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_CITA" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_USUA_REFERENCE_GEN_EMPR" FromRole="GEN_USUARIOS" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_JORNADA" Relationship="Self.FK_GEN_JORN_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_JORNADA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OT1" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA1" FromRole="GEN_USUARIOS" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OT2" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA2" FromRole="GEN_USUARIOS" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OT3" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_USUA3" FromRole="GEN_USUARIOS" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OTUSUARIO" Relationship="Self.FK_GEN_OTUS_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_OTUSUARIO" />
+          <NavigationProperty Name="GEN_OTVEHICULO" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_OTVEHICULO" />
+          <NavigationProperty Name="GEN_VERSIONES" Relationship="Self.FK_GEN_VERS_REFERENCE_GEN_USUA" FromRole="GEN_USUARIOS" ToRole="GEN_VERSIONES" />
+          <NavigationProperty Name="GEN_VERSIONES1" Relationship="Self.FK_GEN_VERS_REFERENCE_GEN_USUA1" FromRole="GEN_USUARIOS" ToRole="GEN_VERSIONES" />
+        </EntityType>
+        <EntityType Name="GEN_VEHICULO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_INT" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="CODIGO" Type="Int32" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ROWID" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FECHAINSERCION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FECHAACTUALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="BORRADO" Type="Int32" Nullable="false" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <Property Name="MARCADO" Type="Int32" />
+          <NavigationProperty Name="GEN_EMPRESA" Relationship="Self.FK_GEN_VEHI_REFERENCE_GEN_EMPR" FromRole="GEN_VEHICULO" ToRole="GEN_EMPRESA" />
+          <NavigationProperty Name="GEN_OT" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI1" FromRole="GEN_VEHICULO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OT1" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI2" FromRole="GEN_VEHICULO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OT2" Relationship="Self.FK_GEN_OT_REFERENCE_GEN_VEHI3" FromRole="GEN_VEHICULO" ToRole="GEN_OT" />
+          <NavigationProperty Name="GEN_OTVEHICULO" Relationship="Self.FK_GEN_OTVE_REFERENCE_GEN_VEHI" FromRole="GEN_VEHICULO" ToRole="GEN_OTVEHICULO" />
+        </EntityType>
+        <EntityType Name="GEN_VERSIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROWID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PRIMERUSUARIOID" Type="Int32" />
+          <Property Name="ULTIMOUSUARIOID" Type="Int32" />
+          <Property Name="MID" Type="Int32" />
+          <Property Name="VERSION_SW" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VERSION_BBDD" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FECHAPRIMERLOGIN" Type="DateTime" Precision="3" />
+          <Property Name="FECHAULTIMOLOGIN" Type="DateTime" Precision="3" />
+          <Property Name="LOGACTIVADO_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="LOGLEVEL" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="MANTENIMIENTODB_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DATABASENAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LICENSE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CONNSTRING" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HOSTNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HOSTNAME2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="INTERVAL" Type="Int32" />
+          <Property Name="INTERVALTYPE" Type="Int32" />
+          <Property Name="TIMEOUT" Type="Int32" />
+          <Property Name="CONNECTIONMODE" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="SERVERPORT" Type="Int32" />
+          <Property Name="FULLDUPLEX_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="SYNCHRONIZE_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="COMPRESSUP_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="COMPRESSDOWN_SON" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BATCHSIZEUP" Type="Int32" />
+          <Property Name="ITX_TERMINAL" Type="Int32" />
+          <NavigationProperty Name="GEN_USUARIOS" Relationship="Self.FK_GEN_VERS_REFERENCE_GEN_USUA" FromRole="GEN_VERSIONES" ToRole="GEN_USUARIOS" />
+          <NavigationProperty Name="GEN_USUARIOS1" Relationship="Self.FK_GEN_VERS_REFERENCE_GEN_USUA1" FromRole="GEN_VERSIONES" ToRole="GEN_USUARIOS" />
+        </EntityType>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="0..1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CITA_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_CITA" Type="Self.GEN_CITA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CITA">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CLIE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CLIENTE" Type="Self.GEN_CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CLIENTE">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CONT_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_CONTACTO" Type="Self.GEN_CONTACTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CONTACTO">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_CONT_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_CONTACTO" Type="Self.GEN_CONTACTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_CONTACTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FAMI_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_FAMILIA" Type="Self.GEN_FAMILIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FAMILIA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_MATE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_MATERIAL" Type="Self.GEN_MATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_MATERIAL">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_TARE_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_TAREA" Type="Self.GEN_TAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_TAREA">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_USUA_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_USUARIOS">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VEHI_REFERENCE_GEN_EMPR">
+          <End Role="GEN_EMPRESA" Type="Self.GEN_EMPRESA" Multiplicity="1" />
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_EMPRESA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VEHICULO">
+              <PropertyRef Name="IDEMPRESA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_ESTA">
+          <End Role="GEN_ESTADO" Type="Self.GEN_ESTADO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_ESTADO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="ESTADOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_EVEN_REFERENCE_GEN_JORN">
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="1" />
+          <End Role="GEN_EVENTO" Type="Self.GEN_EVENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_JORNADA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_EVENTO">
+              <PropertyRef Name="JORNADAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_EVEN_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="0..1" />
+          <End Role="GEN_EVENTO" Type="Self.GEN_EVENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_EVENTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_FAMI">
+          <End Role="GEN_FAMILIA" Type="Self.GEN_FAMILIA" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_FAMILIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="IDOTFAMILIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FOTO_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_FOTO" Type="Self.GEN_FOTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FOTO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_FOTO_REFERENCE_GEN_OTIN">
+          <End Role="GEN_OTINCIDENCIA" Type="Self.GEN_OTINCIDENCIA" Multiplicity="1" />
+          <End Role="GEN_FOTO" Type="Self.GEN_FOTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OTINCIDENCIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_FOTO">
+              <PropertyRef Name="IDINCIDENCIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_JORN_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_JORNADA">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTCO_REFERENCE_GEN_JORN">
+          <End Role="GEN_JORNADA" Type="Self.GEN_JORNADA" Multiplicity="1" />
+          <End Role="GEN_OTCONFIRMADA" Type="Self.GEN_OTCONFIRMADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_JORNADA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTCONFIRMADA">
+              <PropertyRef Name="JORNADAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTMA_REFERENCE_GEN_MATE">
+          <End Role="GEN_MATERIAL" Type="Self.GEN_MATERIAL" Multiplicity="1" />
+          <End Role="GEN_OTMATERIAL" Type="Self.GEN_OTMATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_MATERIAL">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTMATERIAL">
+              <PropertyRef Name="MATERIALID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDRESPONSABLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA1">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA2">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_USUA3">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDTECNICO3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI1">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI2">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OT_REFERENCE_GEN_VEHI3">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="0..1" />
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OT">
+              <PropertyRef Name="IDVEHICULO3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTCO_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTCONFIRMADA" Type="Self.GEN_OTCONFIRMADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTCONFIRMADA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTIN_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTINCIDENCIA" Type="Self.GEN_OTINCIDENCIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTINCIDENCIA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTMA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTMATERIAL" Type="Self.GEN_OTMATERIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTMATERIAL">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_OT">
+          <End Role="GEN_OT" Type="Self.GEN_OT" Multiplicity="1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_OT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="OTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTTA_REFERENCE_GEN_TARE">
+          <End Role="GEN_TAREA" Type="Self.GEN_TAREA" Multiplicity="1" />
+          <End Role="GEN_OTTAREA" Type="Self.GEN_OTTAREA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_TAREA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTTAREA">
+              <PropertyRef Name="TAREAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTUS_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="1" />
+          <End Role="GEN_OTUSUARIO" Type="Self.GEN_OTUSUARIO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTUSUARIO">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="USUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_OTVE_REFERENCE_GEN_VEHI">
+          <End Role="GEN_VEHICULO" Type="Self.GEN_VEHICULO" Multiplicity="1" />
+          <End Role="GEN_OTVEHICULO" Type="Self.GEN_OTVEHICULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_VEHICULO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_OTVEHICULO">
+              <PropertyRef Name="VEHICULOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VERS_REFERENCE_GEN_USUA">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_VERSIONES" Type="Self.GEN_VERSIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VERSIONES">
+              <PropertyRef Name="PRIMERUSUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GEN_VERS_REFERENCE_GEN_USUA1">
+          <End Role="GEN_USUARIOS" Type="Self.GEN_USUARIOS" Multiplicity="0..1" />
+          <End Role="GEN_VERSIONES" Type="Self.GEN_VERSIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GEN_USUARIOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GEN_VERSIONES">
+              <PropertyRef Name="ULTIMOUSUARIOID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="XOne_IsurbideEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GEN_CITA" EntityType="Self.GEN_CITA" />
+          <EntitySet Name="GEN_CLIENTE" EntityType="Self.GEN_CLIENTE" />
+          <EntitySet Name="GEN_CONTACTO" EntityType="Self.GEN_CONTACTO" />
+          <EntitySet Name="GEN_EMPRESA" EntityType="Self.GEN_EMPRESA" />
+          <EntitySet Name="GEN_ESTADO" EntityType="Self.GEN_ESTADO" />
+          <EntitySet Name="GEN_EVENTO" EntityType="Self.GEN_EVENTO" />
+          <EntitySet Name="GEN_FAMILIA" EntityType="Self.GEN_FAMILIA" />
+          <EntitySet Name="GEN_FOTO" EntityType="Self.GEN_FOTO" />
+          <EntitySet Name="GEN_JORNADA" EntityType="Self.GEN_JORNADA" />
+          <EntitySet Name="GEN_MATERIAL" EntityType="Self.GEN_MATERIAL" />
+          <EntitySet Name="GEN_OT" EntityType="Self.GEN_OT" />
+          <EntitySet Name="GEN_OTCONFIRMADA" EntityType="Self.GEN_OTCONFIRMADA" />
+          <EntitySet Name="GEN_OTINCIDENCIA" EntityType="Self.GEN_OTINCIDENCIA" />
+          <EntitySet Name="GEN_OTMATERIAL" EntityType="Self.GEN_OTMATERIAL" />
+          <EntitySet Name="GEN_OTTAREA" EntityType="Self.GEN_OTTAREA" />
+          <EntitySet Name="GEN_OTUSUARIO" EntityType="Self.GEN_OTUSUARIO" />
+          <EntitySet Name="GEN_OTVEHICULO" EntityType="Self.GEN_OTVEHICULO" />
+          <EntitySet Name="GEN_TAREA" EntityType="Self.GEN_TAREA" />
+          <EntitySet Name="GEN_USUARIOS" EntityType="Self.GEN_USUARIOS" />
+          <EntitySet Name="GEN_VEHICULO" EntityType="Self.GEN_VEHICULO" />
+          <EntitySet Name="GEN_VERSIONES" EntityType="Self.GEN_VERSIONES" />
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CITA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_OT" Association="Self.FK_GEN_CITA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CITA_REFERENCE_GEN_USUA" Association="Self.FK_GEN_CITA_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_CITA" EntitySet="GEN_CITA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CLIE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CLIE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CLIENTE" EntitySet="GEN_CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CONT_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_CONT_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_CONTACTO" EntitySet="GEN_CONTACTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_CONT_REFERENCE_GEN_OT" Association="Self.FK_GEN_CONT_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_CONTACTO" EntitySet="GEN_CONTACTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FAMI_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_FAMI_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_FAMILIA" EntitySet="GEN_FAMILIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_MATE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_MATE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_MATERIAL" EntitySet="GEN_MATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_OT_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_TARE_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_TARE_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_TAREA" EntitySet="GEN_TAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_USUA_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_USUA_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VEHI_REFERENCE_GEN_EMPR" Association="Self.FK_GEN_VEHI_REFERENCE_GEN_EMPR">
+            <End Role="GEN_EMPRESA" EntitySet="GEN_EMPRESA" />
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_ESTA" Association="Self.FK_GEN_OT_REFERENCE_GEN_ESTA">
+            <End Role="GEN_ESTADO" EntitySet="GEN_ESTADO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_EVEN_REFERENCE_GEN_JORN" Association="Self.FK_GEN_EVEN_REFERENCE_GEN_JORN">
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+            <End Role="GEN_EVENTO" EntitySet="GEN_EVENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_EVEN_REFERENCE_GEN_OT" Association="Self.FK_GEN_EVEN_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_EVENTO" EntitySet="GEN_EVENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_FAMI" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_FAMI">
+            <End Role="GEN_FAMILIA" EntitySet="GEN_FAMILIA" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FOTO_REFERENCE_GEN_OT" Association="Self.FK_GEN_FOTO_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_FOTO" EntitySet="GEN_FOTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_FOTO_REFERENCE_GEN_OTIN" Association="Self.FK_GEN_FOTO_REFERENCE_GEN_OTIN">
+            <End Role="GEN_OTINCIDENCIA" EntitySet="GEN_OTINCIDENCIA" />
+            <End Role="GEN_FOTO" EntitySet="GEN_FOTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_JORN_REFERENCE_GEN_USUA" Association="Self.FK_GEN_JORN_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTCO_REFERENCE_GEN_JORN" Association="Self.FK_GEN_OTCO_REFERENCE_GEN_JORN">
+            <End Role="GEN_JORNADA" EntitySet="GEN_JORNADA" />
+            <End Role="GEN_OTCONFIRMADA" EntitySet="GEN_OTCONFIRMADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTMA_REFERENCE_GEN_MATE" Association="Self.FK_GEN_OTMA_REFERENCE_GEN_MATE">
+            <End Role="GEN_MATERIAL" EntitySet="GEN_MATERIAL" />
+            <End Role="GEN_OTMATERIAL" EntitySet="GEN_OTMATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA1" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA1">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA2" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA2">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_USUA3" Association="Self.FK_GEN_OT_REFERENCE_GEN_USUA3">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI1" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI1">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI2" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI2">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OT_REFERENCE_GEN_VEHI3" Association="Self.FK_GEN_OT_REFERENCE_GEN_VEHI3">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTCO_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTCO_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTCONFIRMADA" EntitySet="GEN_OTCONFIRMADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTIN_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTIN_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTINCIDENCIA" EntitySet="GEN_OTINCIDENCIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTMA_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTMA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTMATERIAL" EntitySet="GEN_OTMATERIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_OT" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_OT">
+            <End Role="GEN_OT" EntitySet="GEN_OT" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTTA_REFERENCE_GEN_TARE" Association="Self.FK_GEN_OTTA_REFERENCE_GEN_TARE">
+            <End Role="GEN_TAREA" EntitySet="GEN_TAREA" />
+            <End Role="GEN_OTTAREA" EntitySet="GEN_OTTAREA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTUS_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OTUS_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OTUSUARIO" EntitySet="GEN_OTUSUARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_USUA" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_OTVE_REFERENCE_GEN_VEHI" Association="Self.FK_GEN_OTVE_REFERENCE_GEN_VEHI">
+            <End Role="GEN_VEHICULO" EntitySet="GEN_VEHICULO" />
+            <End Role="GEN_OTVEHICULO" EntitySet="GEN_OTVEHICULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VERS_REFERENCE_GEN_USUA" Association="Self.FK_GEN_VERS_REFERENCE_GEN_USUA">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_VERSIONES" EntitySet="GEN_VERSIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GEN_VERS_REFERENCE_GEN_USUA1" Association="Self.FK_GEN_VERS_REFERENCE_GEN_USUA1">
+            <End Role="GEN_USUARIOS" EntitySet="GEN_USUARIOS" />
+            <End Role="GEN_VERSIONES" EntitySet="GEN_VERSIONES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XOne_IsurbideModelStoreContainer" CdmEntityContainer="XOne_IsurbideEntities">
+          <EntitySetMapping Name="GEN_CITA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_CITA">
+              <MappingFragment StoreEntitySet="GEN_CITA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="FECHAHORAINICIO" ColumnName="FECHAHORAINICIO" />
+                <ScalarProperty Name="FECHAHORAFIN" ColumnName="FECHAHORAFIN" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+                <ScalarProperty Name="CODIGOTIPO" ColumnName="CODIGOTIPO" />
+                <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+                <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="CODIGOTIPOFASE" ColumnName="CODIGOTIPOFASE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_CLIENTE">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_CLIENTE">
+              <MappingFragment StoreEntitySet="GEN_CLIENTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGOCLIENTE" ColumnName="CODIGOCLIENTE" />
+                <ScalarProperty Name="NOMBRECLIENTE" ColumnName="NOMBRECLIENTE" />
+                <ScalarProperty Name="TELEFONOCLIENTE" ColumnName="TELEFONOCLIENTE" />
+                <ScalarProperty Name="CARGOCLIENTE" ColumnName="CARGOCLIENTE" />
+                <ScalarProperty Name="DIRECCIONCLIENTE" ColumnName="DIRECCIONCLIENTE" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_CONTACTO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_CONTACTO">
+              <MappingFragment StoreEntitySet="GEN_CONTACTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGOCLIENTE" ColumnName="CODIGOCLIENTE" />
+                <ScalarProperty Name="CITANOMBRE" ColumnName="CITANOMBRE" />
+                <ScalarProperty Name="CITATELEFONO" ColumnName="CITATELEFONO" />
+                <ScalarProperty Name="CITACARGO" ColumnName="CITACARGO" />
+                <ScalarProperty Name="CITACONFIRMADO" ColumnName="CITACONFIRMADO" />
+                <ScalarProperty Name="CITAOBSERVACIONES" ColumnName="CITAOBSERVACIONES" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_EMPRESA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_EMPRESA">
+              <MappingFragment StoreEntitySet="GEN_EMPRESA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_ESTADO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_ESTADO">
+              <MappingFragment StoreEntitySet="GEN_ESTADO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CODIGOESTADO" ColumnName="CODIGOESTADO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_EVENTO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_EVENTO">
+              <MappingFragment StoreEntitySet="GEN_EVENTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="JORNADAID" ColumnName="JORNADAID" />
+                <ScalarProperty Name="TIPOEVENTO" ColumnName="TIPOEVENTO" />
+                <ScalarProperty Name="FECHAEVENTO" ColumnName="FECHAEVENTO" />
+                <ScalarProperty Name="LATITUD" ColumnName="LATITUD" />
+                <ScalarProperty Name="LONGITUD" ColumnName="LONGITUD" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_FAMILIA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_FAMILIA">
+              <MappingFragment StoreEntitySet="GEN_FAMILIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="TIPOPARTE" ColumnName="TIPOPARTE" />
+                <ScalarProperty Name="CODIGOFAMILIA" ColumnName="CODIGOFAMILIA" />
+                <ScalarProperty Name="CODIGOSUBFAMILIA" ColumnName="CODIGOSUBFAMILIA" />
+                <ScalarProperty Name="CODIGOARTICULO" ColumnName="CODIGOARTICULO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_FOTO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_FOTO">
+              <MappingFragment StoreEntitySet="GEN_FOTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDINCIDENCIA" ColumnName="IDINCIDENCIA" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="FOTOMANT" ColumnName="FOTOMANT" />
+                <ScalarProperty Name="FOTOREP" ColumnName="FOTOREP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_JORNADA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_JORNADA">
+              <MappingFragment StoreEntitySet="GEN_JORNADA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+                <ScalarProperty Name="INICIO" ColumnName="INICIO" />
+                <ScalarProperty Name="FIN" ColumnName="FIN" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_MATERIAL">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_MATERIAL">
+              <MappingFragment StoreEntitySet="GEN_MATERIAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGOFAMILIA" ColumnName="CODIGOFAMILIA" />
+                <ScalarProperty Name="CODIGOSUBFAMILIA" ColumnName="CODIGOSUBFAMILIA" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OT">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OT">
+              <MappingFragment StoreEntitySet="GEN_OT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ESTADOID" ColumnName="ESTADOID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="CODIGOPARTEID" ColumnName="CODIGOPARTEID" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGOTIPO" ColumnName="CODIGOTIPO" />
+                <ScalarProperty Name="TIPOPARTE" ColumnName="TIPOPARTE" />
+                <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+                <ScalarProperty Name="SERIE" ColumnName="SERIE" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="FECHAALTA" ColumnName="FECHAALTA" />
+                <ScalarProperty Name="FECHAINTEGRACIONMOVILIDAD" ColumnName="FECHAINTEGRACIONMOVILIDAD" />
+                <ScalarProperty Name="FECHAINTEGRACIONORIGEN" ColumnName="FECHAINTEGRACIONORIGEN" />
+                <ScalarProperty Name="FORZARINTEGRACIONORIGEN" ColumnName="FORZARINTEGRACIONORIGEN" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="CLIENTECODIGO" ColumnName="CLIENTECODIGO" />
+                <ScalarProperty Name="CLIENTENOMBRE" ColumnName="CLIENTENOMBRE" />
+                <ScalarProperty Name="CLIENTEDIRECCION" ColumnName="CLIENTEDIRECCION" />
+                <ScalarProperty Name="CLIENTEPOBLACION" ColumnName="CLIENTEPOBLACION" />
+                <ScalarProperty Name="IDRESPONSABLE" ColumnName="IDRESPONSABLE" />
+                <ScalarProperty Name="FECHAINTERVENCION" ColumnName="FECHAINTERVENCION" />
+                <ScalarProperty Name="TIEMPO" ColumnName="TIEMPO" />
+                <ScalarProperty Name="DESC_MANT" ColumnName="DESC_MANT" />
+                <ScalarProperty Name="DESC_SERV" ColumnName="DESC_SERV" />
+                <ScalarProperty Name="ADMINISTRADORCODIGO" ColumnName="ADMINISTRADORCODIGO" />
+                <ScalarProperty Name="ADMINISTRADORNOMBRE" ColumnName="ADMINISTRADORNOMBRE" />
+                <ScalarProperty Name="ADMINISTRADORTELEFONO" ColumnName="ADMINISTRADORTELEFONO" />
+                <ScalarProperty Name="ADMINISTRADOREMAIL" ColumnName="ADMINISTRADOREMAIL" />
+                <ScalarProperty Name="AFECTADONOMBRE" ColumnName="AFECTADONOMBRE" />
+                <ScalarProperty Name="AFECTADOTELEFONO" ColumnName="AFECTADOTELEFONO" />
+                <ScalarProperty Name="PERSONANOMBRE" ColumnName="PERSONANOMBRE" />
+                <ScalarProperty Name="PERSONATELEFONO" ColumnName="PERSONATELEFONO" />
+                <ScalarProperty Name="IDTECNICO1" ColumnName="IDTECNICO1" />
+                <ScalarProperty Name="IDTECNICO2" ColumnName="IDTECNICO2" />
+                <ScalarProperty Name="IDTECNICO3" ColumnName="IDTECNICO3" />
+                <ScalarProperty Name="IDVEHICULO1" ColumnName="IDVEHICULO1" />
+                <ScalarProperty Name="IDVEHICULO2" ColumnName="IDVEHICULO2" />
+                <ScalarProperty Name="IDVEHICULO3" ColumnName="IDVEHICULO3" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+                <ScalarProperty Name="CODIGOTIPOFASE" ColumnName="CODIGOTIPOFASE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTCONFIRMADA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTCONFIRMADA">
+              <MappingFragment StoreEntitySet="GEN_OTCONFIRMADA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="JORNADAID" ColumnName="JORNADAID" />
+                <ScalarProperty Name="TSGARANTIA" ColumnName="TSGARANTIA" />
+                <ScalarProperty Name="TSGARANTIAOBSERV" ColumnName="TSGARANTIAOBSERV" />
+                <ScalarProperty Name="TRABAJOSREA" ColumnName="TRABAJOSREA" />
+                <ScalarProperty Name="NOMBREFIRMA" ColumnName="NOMBREFIRMA" />
+                <ScalarProperty Name="DNIFIRMA" ColumnName="DNIFIRMA" />
+                <ScalarProperty Name="FIRMACLIENTE" ColumnName="FIRMACLIENTE" />
+                <ScalarProperty Name="FIRMATECNICO" ColumnName="FIRMATECNICO" />
+                <ScalarProperty Name="M_PRE_PERIODO" ColumnName="M_PRE_PERIODO" />
+                <ScalarProperty Name="M_PRE_OBSERVACIONES" ColumnName="M_PRE_OBSERVACIONES" />
+                <ScalarProperty Name="M_PRE_CONGARANTIA" ColumnName="M_PRE_CONGARANTIA" />
+                <ScalarProperty Name="M_PRE_SINGARANTIA" ColumnName="M_PRE_SINGARANTIA" />
+                <ScalarProperty Name="M_PRE_CONGARANTIA24" ColumnName="M_PRE_CONGARANTIA24" />
+                <ScalarProperty Name="M_PRE_PRECIO" ColumnName="M_PRE_PRECIO" />
+                <ScalarProperty Name="M_PRE_TIEMPO" ColumnName="M_PRE_TIEMPO" />
+                <ScalarProperty Name="M_PRE_OPERARIOS" ColumnName="M_PRE_OPERARIOS" />
+                <ScalarProperty Name="M_PRE_OBSERVACCESOS" ColumnName="M_PRE_OBSERVACCESOS" />
+                <ScalarProperty Name="R_PRE_OBSERVACIONES" ColumnName="R_PRE_OBSERVACIONES" />
+                <ScalarProperty Name="R_PRE_OBSERVACCESOS" ColumnName="R_PRE_OBSERVACCESOS" />
+                <ScalarProperty Name="R_PRE_PRECIO" ColumnName="R_PRE_PRECIO" />
+                <ScalarProperty Name="R_PRE_TIEMPO" ColumnName="R_PRE_TIEMPO" />
+                <ScalarProperty Name="R_PRE_OPERARIOS" ColumnName="R_PRE_OPERARIOS" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="PDF_GENERADO" ColumnName="PDF_GENERADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="PDF_MANT" ColumnName="PDF_MANT" />
+                <ScalarProperty Name="PDF_REP" ColumnName="PDF_REP" />
+                <ScalarProperty Name="PDF_INCIDENCIA" ColumnName="PDF_INCIDENCIA" />
+                <ScalarProperty Name="PAGADO" ColumnName="PAGADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTINCIDENCIA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTINCIDENCIA">
+              <MappingFragment StoreEntitySet="GEN_OTINCIDENCIA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="INC_INTERNA" ColumnName="INC_INTERNA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTMATERIAL">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTMATERIAL">
+              <MappingFragment StoreEntitySet="GEN_OTMATERIAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="MATERIALID" ColumnName="MATERIALID" />
+                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTTAREA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTTAREA">
+              <MappingFragment StoreEntitySet="GEN_OTTAREA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="TAREAID" ColumnName="TAREAID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CONFIRMADA" ColumnName="CONFIRMADA" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTUSUARIO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTUSUARIO">
+              <MappingFragment StoreEntitySet="GEN_OTUSUARIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+                <ScalarProperty Name="IDOTFAMILIA" ColumnName="IDOTFAMILIA" />
+                <ScalarProperty Name="TIEMPOINI" ColumnName="TIEMPOINI" />
+                <ScalarProperty Name="TIEMPOFIN" ColumnName="TIEMPOFIN" />
+                <ScalarProperty Name="TIEMPO" ColumnName="TIEMPO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="TIEMPOTXT" ColumnName="TIEMPOTXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_OTVEHICULO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_OTVEHICULO">
+              <MappingFragment StoreEntitySet="GEN_OTVEHICULO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OTID" ColumnName="OTID" />
+                <ScalarProperty Name="VEHICULOID" ColumnName="VEHICULOID" />
+                <ScalarProperty Name="IDOTFAMILIA" ColumnName="IDOTFAMILIA" />
+                <ScalarProperty Name="TIEMPO" ColumnName="TIEMPO" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="USUARIOID" ColumnName="USUARIOID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_TAREA">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_TAREA">
+              <MappingFragment StoreEntitySet="GEN_TAREA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_USUARIOS">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_USUARIOS">
+              <MappingFragment StoreEntitySet="GEN_USUARIOS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+                <ScalarProperty Name="AUTO" ColumnName="AUTO" />
+                <ScalarProperty Name="ACTIVO_SON" ColumnName="ACTIVO_SON" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_VEHICULO">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_VEHICULO">
+              <MappingFragment StoreEntitySet="GEN_VEHICULO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+                <ScalarProperty Name="ID_INT" ColumnName="ID_INT" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="FECHAINSERCION" ColumnName="FECHAINSERCION" />
+                <ScalarProperty Name="FECHAACTUALIZACION" ColumnName="FECHAACTUALIZACION" />
+                <ScalarProperty Name="BORRADO" ColumnName="BORRADO" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+                <ScalarProperty Name="MARCADO" ColumnName="MARCADO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GEN_VERSIONES">
+            <EntityTypeMapping TypeName="XOne_IsurbideModel.GEN_VERSIONES">
+              <MappingFragment StoreEntitySet="GEN_VERSIONES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROWID" ColumnName="ROWID" />
+                <ScalarProperty Name="PRIMERUSUARIOID" ColumnName="PRIMERUSUARIOID" />
+                <ScalarProperty Name="ULTIMOUSUARIOID" ColumnName="ULTIMOUSUARIOID" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="VERSION_SW" ColumnName="VERSION_SW" />
+                <ScalarProperty Name="VERSION_BBDD" ColumnName="VERSION_BBDD" />
+                <ScalarProperty Name="FECHAPRIMERLOGIN" ColumnName="FECHAPRIMERLOGIN" />
+                <ScalarProperty Name="FECHAULTIMOLOGIN" ColumnName="FECHAULTIMOLOGIN" />
+                <ScalarProperty Name="LOGACTIVADO_SON" ColumnName="LOGACTIVADO_SON" />
+                <ScalarProperty Name="LOGLEVEL" ColumnName="LOGLEVEL" />
+                <ScalarProperty Name="MANTENIMIENTODB_SON" ColumnName="MANTENIMIENTODB_SON" />
+                <ScalarProperty Name="DATABASENAME" ColumnName="DATABASENAME" />
+                <ScalarProperty Name="LICENSE" ColumnName="LICENSE" />
+                <ScalarProperty Name="CONNSTRING" ColumnName="CONNSTRING" />
+                <ScalarProperty Name="HOSTNAME" ColumnName="HOSTNAME" />
+                <ScalarProperty Name="HOSTNAME2" ColumnName="HOSTNAME2" />
+                <ScalarProperty Name="INTERVAL" ColumnName="INTERVAL" />
+                <ScalarProperty Name="INTERVALTYPE" ColumnName="INTERVALTYPE" />
+                <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+                <ScalarProperty Name="CONNECTIONMODE" ColumnName="CONNECTIONMODE" />
+                <ScalarProperty Name="SERVERPORT" ColumnName="SERVERPORT" />
+                <ScalarProperty Name="FULLDUPLEX_SON" ColumnName="FULLDUPLEX_SON" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="SYNCHRONIZE_SON" ColumnName="SYNCHRONIZE_SON" />
+                <ScalarProperty Name="COMPRESSUP_SON" ColumnName="COMPRESSUP_SON" />
+                <ScalarProperty Name="COMPRESSDOWN_SON" ColumnName="COMPRESSDOWN_SON" />
+                <ScalarProperty Name="BATCHSIZEUP" ColumnName="BATCHSIZEUP" />
+                <ScalarProperty Name="ITX_TERMINAL" ColumnName="ITX_TERMINAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
